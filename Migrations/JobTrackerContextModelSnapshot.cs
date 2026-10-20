@@ -10,7 +10,7 @@ using job_trackr_backend.Data;
 
 namespace job_trackr_backend.Migrations
 {
-    [DbContext(typeof(JobTrackerContext))]
+    [DbContext(typeof(JobTrackrContext))]
     partial class JobTrackerContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -52,6 +52,16 @@ namespace job_trackr_backend.Migrations
                     b.HasIndex("StatusId");
 
                     b.ToTable("JobApplications");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Company = "Zillow",
+                            DateApplied = new DateTime(2026, 10, 20, 16, 33, 16, 144, DateTimeKind.Utc).AddTicks(7136),
+                            JobTitle = "IT Support",
+                            StatusId = 4
+                        });
                 });
 
             modelBuilder.Entity("job_trackr_backend.Models.Status", b =>

@@ -2,7 +2,7 @@ using job_trackr_backend.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<JobTrackerContext>(options =>
+builder.Services.AddDbContext<JobTrackrContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
