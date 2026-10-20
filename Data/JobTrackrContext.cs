@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace job_trackr_backend.Data;
 
-public class JobTrackerContext : DbContext
+public class JobTrackrContext : DbContext
 {
-    public JobTrackerContext(DbContextOptions<JobTrackerContext> options)
+    public JobTrackrContext(DbContextOptions<JobTrackrContext> options)
         : base(options) { }
 
     public DbSet<JobApplication> JobApplications => Set<JobApplication>();
@@ -21,6 +21,17 @@ public class JobTrackerContext : DbContext
                 new Status { Id = 3, StatusName = "Offer" },
                 new Status { Id = 4, StatusName = "Rejected" },
                 new Status { Id = 5, StatusName = "Withdrawn" }
+            );
+        modelBuilder
+            .Entity<JobApplication>()
+            .HasData(
+                new JobApplication
+                {
+                    Id = 1,
+                    Company = "Zillow",
+                    JobTitle = "IT Support",
+                    StatusId = 4,
+                }
             );
     }
 }

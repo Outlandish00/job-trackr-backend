@@ -11,7 +11,7 @@ using job_trackr_backend.Data;
 
 namespace job_trackr_backend.Migrations
 {
-    [DbContext(typeof(JobTrackerContext))]
+    [DbContext(typeof(JobTrackrContext))]
     [Migration("20261019174752_InitialCreate")]
     partial class InitialCreate
     {
