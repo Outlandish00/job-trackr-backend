@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\job-trackr-backend.props" />
-</Project>
